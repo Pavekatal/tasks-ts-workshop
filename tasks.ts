@@ -81,3 +81,26 @@ console.log(move(Direction.Down));
 console.log(move(Direction.Right));
 console.log(move(Direction.Up));
 console.log(move(Direction.Left));
+
+// Task 4. Сортировка пользователей
+// Напишите функцию sortByAge(users): User[], возвращающую
+// отсортированный массив по возрасту
+
+type User = {
+  name: string;
+  age: number;
+};
+
+const users: User[] = [
+  { name: "Alice", age: 15 },
+  { name: "Alex", age: 21 },
+  { name: "Ivan", age: 24 },
+  { name: "Julya", age: 18 },
+];
+
+const sortByAge = (users: User[]) => {
+  const sortUsers = [...users].sort((a, b) => a.age - b.age);
+  console.log("sortUsers:", sortUsers);
+};
+console.log("users:", users);
+sortByAge(users);

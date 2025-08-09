@@ -53,5 +53,17 @@ console.log(move(Direction.Down));
 console.log(move(Direction.Right));
 console.log(move(Direction.Up));
 console.log(move(Direction.Left));
+const users = [
+    { name: "Alice", age: 15 },
+    { name: "Alex", age: 21 },
+    { name: "Ivan", age: 24 },
+    { name: "Julya", age: 18 },
+];
+const sortByAge = (users) => {
+    const sortUsers = [...users].sort((a, b) => a.age - b.age);
+    console.log("sortUsers:", sortUsers);
+};
+console.log("users:", users);
+sortByAge(users);
 export {};
 //# sourceMappingURL=tasks.js.map
