@@ -101,6 +101,33 @@ const users: User[] = [
 const sortByAge = (users: User[]) => {
   const sortUsers = [...users].sort((a, b) => a.age - b.age);
   console.log("sortUsers:", sortUsers);
+  return sortUsers;
 };
 console.log("users:", users);
 sortByAge(users);
+
+// Task 5. Union-Тип Status
+// Создайте тип Status = "idle" | "loading" | "success" | "error"
+// Реализуйте функцию getStatusMessage(status: Status): string,
+// которая возвращает сообщение в зависимости от статуса.
+
+type Status = "idle" | "loading" | "success" | "error";
+
+const getStatusMessage = (status: Status): string => {
+  let nameStatus;
+  if (status === "idle") {
+    nameStatus = "принято";
+  } else if (status === "loading") {
+    nameStatus = "в обработке";
+  } else if (status === "success") {
+    nameStatus = "обработано успешно";
+  } else {
+    nameStatus = "обработано с ошибкой";
+  }
+  return `Сообщение ${nameStatus}`;
+};
+
+console.log(getStatusMessage("idle"));
+console.log(getStatusMessage("loading"));
+console.log(getStatusMessage("success"));
+console.log(getStatusMessage("error"));

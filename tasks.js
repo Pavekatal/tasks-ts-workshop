@@ -62,8 +62,29 @@ const users = [
 const sortByAge = (users) => {
     const sortUsers = [...users].sort((a, b) => a.age - b.age);
     console.log("sortUsers:", sortUsers);
+    return sortUsers;
 };
 console.log("users:", users);
 sortByAge(users);
+const getStatusMessage = (status) => {
+    let nameStatus;
+    if (status === "idle") {
+        nameStatus = "принято";
+    }
+    else if (status === "loading") {
+        nameStatus = "в обработке";
+    }
+    else if (status === "success") {
+        nameStatus = "обработано успешно";
+    }
+    else {
+        nameStatus = "обработано с ошибкой";
+    }
+    return `Сообщение ${nameStatus}`;
+};
+console.log(getStatusMessage("idle"));
+console.log(getStatusMessage("loading"));
+console.log(getStatusMessage("success"));
+console.log(getStatusMessage("error"));
 export {};
 //# sourceMappingURL=tasks.js.map
