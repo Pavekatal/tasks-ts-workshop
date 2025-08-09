@@ -18,5 +18,40 @@ const movie = {
     rating: 7,
 };
 console.log(movie);
+// Task 3. Enum + switch
+// Определите enum Direction с вариантами 'Up', 'Down', 'Left', 'Right'.
+// Напишите функцию move(direction: Direction): string, возвращающую строку:
+// "Moving up" и т.п.
+var Direction;
+(function (Direction) {
+    Direction[Direction["Up"] = 0] = "Up";
+    Direction[Direction["Down"] = 1] = "Down";
+    Direction[Direction["Left"] = 2] = "Left";
+    Direction[Direction["Right"] = 3] = "Right";
+})(Direction || (Direction = {}));
+const move = (direction) => {
+    let directionName;
+    switch (direction) {
+        case Direction.Up:
+            directionName = "up";
+            break;
+        case Direction.Down:
+            directionName = "down";
+            break;
+        case Direction.Left:
+            directionName = "left";
+            break;
+        case Direction.Right:
+            directionName = "right";
+            break;
+        default:
+            break;
+    }
+    return `Moving ${directionName}`;
+};
+console.log(move(Direction.Down));
+console.log(move(Direction.Right));
+console.log(move(Direction.Up));
+console.log(move(Direction.Left));
 export {};
 //# sourceMappingURL=tasks.js.map
