@@ -11,5 +11,12 @@ const isAdult = (user) => {
     }
 };
 console.log(isAdult(user));
+const movie = {
+    id: "01",
+    title: "Tenet",
+    year: 2020,
+    rating: 7,
+};
+console.log(movie);
 export {};
 //# sourceMappingURL=tasks.js.map
